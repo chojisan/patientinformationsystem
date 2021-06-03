@@ -15,23 +15,23 @@ class CreateTblVitalsignTable extends Migration
     {
         Schema::create('tbl_vitalsign', function (Blueprint $table) {
             $table->id();
-            $table->string('consult_temp_id')->nullable();
+            $table->string('consult_temp_id', 30)->nullable();
             $table->integer('vitalsign_bpsystol')->nullable();
             $table->integer('vitalsign_bpdiasys')->nullable();
             $table->integer('vitalsign_rrrate')->nullable();
-            $table->string('vitalsign_temperature')->nullable();
-            $table->string('vitalsign_heart_rate')->nullable();
-            $table->char('vitalsign_nr')->nullable();
-            $table->char('vitalsign_rr')->nullable();
-            $table->string('vitalsign_pulse_rate')->nullable();
-            $table->string('pat_temp_id')->nullable();
-            $table->string('vitalsign_oxsat')->nullable();
+            $table->string('vitalsign_temperature', 10)->nullable();
+            $table->string('vitalsign_heart_rate', 20)->nullable();
+            $table->char('vitalsign_nr', 20)->nullable();
+            $table->char('vitalsign_rr', 20)->nullable();
+            $table->string('vitalsign_pulse_rate', 10)->nullable();
+            $table->string('pat_temp_id', 50)->nullable();
+            $table->string('vitalsign_oxsat', 10)->nullable();
             $table->time('time')->nullable();
             $table->time('vital_sign_time')->nullable();
-            $table->string('vitalsign_bp_measurement_assessment_code')->nullable();
-            $table->string('med_intake')->nullable();
-            $table->string('personnel_temp_id')->nullable();
-            $table->text('vitalsign_remarks')->nullable();
+            $table->string('vitalsign_bp_measurement_assessment_code', 50)->nullable();
+            $table->string('med_intake', 1)->nullable();
+            $table->string('personnel_temp_id', 50)->nullable();
+            $table->mediumText('vitalsign_remarks')->nullable();
             $table->date('date_entered');
             $table->time('time_entered');
             $table->timestamps();
